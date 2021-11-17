@@ -1,0 +1,231 @@
+  <!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>signUp</title>
+    <link rel="stylesheet" href="static/css/nice.css/default.css" media="screen">
+    <link rel="stylesheet" href="static/css/signUp.css/signUp.css" media="screen">
+    <script class="u-script" type="text/javascript" src="static/js/b.js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="static/js/b.js/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.18.2, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+$(document).ready(function(){
+   
+var ischecked = false
+
+   
+$("#id_check").click(function(){
+        let id = $("#ids").val();
+          
+          $.ajax({
+             async: true,
+             type: 'POST',
+             data: {"id" : id},
+             url: "calldb",
+             dataType: "json",
+             success : function(result){
+                console.log(result);
+            if($("#ids").val() == ''){
+               alert("아이디를 입력해주세요")
+               $("#ids").focus()
+               return false
+                     
+            }
+            
+            $("#ids").change(function(){
+                alert("아이디 중복확인을 다시 해주세요")
+                ischecked = false        
+                return false
+                
+                
+
+                
+            });
+            
+            if(result.id == true){
+                  alert("사용가능한 아이디입니다.")
+                  ischecked = true
+                  $("#ids").blur()
+                  return false
+                  
+                  
+            }else
+                  $("#ids").val('')
+                  alert("이미 등록된 아이디입니다")
+                  $("#ids").focus();
+                  ischecked = false
+                  return false
+
+                 
+               
+                
+          }
+                
+       });
+    });
+
+$("#signup").click(function(){
+      signup();
+   });
+
+   function signup(){
+      let birthPattern = /([0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1,2][0-9]|3[0,1]))/
+            let emailPattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+            let phonePattern = /(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/g;
+            let birthday = $('#text-6663').val()
+            let email = $('#email-4344').val()
+            let phone = $('#phone-61fb').val()
+            let password = $('#text-8579').val()
+            let confirm_password = $('#text-690e').val()
+            if(!birthPattern.test(birthday)){
+               alert("생년월일을 올바른 형식으로 입력해주세요!")
+               return false
+            };
+            if(!emailPattern.test(email)){
+               alert("이메일을 올바른 형식으로 입력해주세요!")
+                  return false
+               };
+            if(!phonePattern.test(콜)){
+                 alert("전화번호를 올바른 형식으로 입력해주세요!")
+                 return false
+               };
+
+            if (ischecked == false){
+               alert("아이디 중복확인을 해주세요")
+               $("#ids").focus()
+               return false
+            };
+
+            if(password != confirm_password){
+            alert("비밀번호가 다릅니다. 다시 입력해주세요")
+            return false
+            }
+            else 
+            document.form.submit()
+            alert("가입이 완료되었습니다")
+            }
+
+}); 
+
+
+</script>        
+
+
+
+</head>
+  <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-be8a"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a href="/" class="u-image u-logo u-image-1" data-image-width="1031" data-image-height="671">
+          <img src="static/images/acorncarta.png" class="u-logo-image u-logo-image-1" data-image-width="64">
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</symbol>
+</defs></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" style="padding: 10px 20px;" href="\">홈</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" style="padding: 10px 20px;" href="/login">로그인</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" style="padding: 10px 20px;">회원가입</a>
+</li></ul>
+          </div>
+        </nav>
+      </div></header> 
+    <section class="u-clearfix u-section-1" id="sec-cfb5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <img class="u-image u-image-default u-image-1" src="static/images/acorncarta.png" alt="" data-image-width="1031" data-image-height="671">
+        <div class="u-form u-form-1">
+          <form action="signup" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">{% csrf_token %}
+            <div class="u-form-group u-form-name">
+              <label for="name-2480" class="u-form-control-hidden u-label"></label>
+              <input type="text" placeholder="아이디를 입력하세요" id="ids" name="id_input" class="u-border-1 u-border-grey-30 u-input u-nput-rectangle u-white" required="">   
+              <button type="button" id="id_check">아이디중복확인</button>
+            </div>
+            <div class="u-form-group u-form-group-2">
+              <label for="text-8579" class="u-form-control-hidden u-label"></label>
+              <input type="password" placeholder="비밀번호를 입력하세요" id="text-8579" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+              
+            </div>
+            <div class="u-form-group u-form-group-3">
+              <label for="text-690e" class="u-form-control-hidden u-label"></label>
+              <input type="password" placeholder="비밀번호를 다시 입력하세요" id="text-690e" name="repassword" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+             
+              
+            </div>
+            <div class="u-form-group u-form-group-4">
+              <label for="text-0141" class="u-form-control-hidden u-label"></label>
+              <input type="text" placeholder="이름을 입력하세요" id="text-0141" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+            </div>
+            <div class="u-form-group u-form-group-5">
+              <label for="text-6663" class="u-form-control-hidden u-label"></label>
+              <input type="text" placeholder="생년월일을 6자리 숫자로 입력하세요" id="text-6663" name="birthday" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+            </div>
+            <div class="u-form-email u-form-group u-form-group-6">
+              <label for="email-4344" class="u-form-control-hidden u-label"></label>
+              <input type="email" pattern="/[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/" placeholder="이메일 주소를 형식에 맞게 입력하세요" id="email-4344" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+            </div>
+            <div class="u-form-group u-form-phone u-form-group-7">
+              <label for="phone-61fb" class="u-form-control-hidden u-label"></label>
+              <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="전화번호를 입력하세요(-을 빼고 입력하세요)" id="phone-61fb" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+            </div>
+            <div class="u-form-group u-form-message u-form-group-8">
+              <label for="message-e1e2" class="u-form-control-hidden u-label"></label>
+            <textarea placeholder="약관1" style="resize:none" rows="4" cols="50" id="message-e1e2" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="" readonly="True">
+         아르콘 카르타 서비스 이용약관1
+         아르콘 카르타 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 아르콘 카르타 서비스의 이용과 관련하여 아르콘 카르타 서비스를 제공하는 아르콘 카르타 주식회사(이하 ‘아르콘 카르타’)와 이를 이용하는 아르콘 카르타 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 아르콘 카르타 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+         아르콘 카르타 서비스를 이용하시거나 아르콘 카르타 서비스 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기 바랍니다.
+         다양한 아르콘 카르타 서비스를 즐겨보세요.
+         아르콘 카르타는 www.ArconCarta.com을 비롯한 아르콘 카르타 도메인의 웹사이트 및 응용프로그램(어플리케이션, 앱)을 통해 정보 검색, 다른 이용자와의 커뮤니케이션, 콘텐츠 제공, 상품 쇼핑 등 여러분의 생활에 편리함을 더할 수 있는 다양한 서비스를 제공하고 있습니다.
+         여러분은 PC, 휴대폰 등 인터넷 이용이 가능한 각종 단말기를 통해 각양각색의 아르콘 카르타 서비스를 자유롭게 이용하실 수 있으며, 개별 서비스들의 구체적인 내용은 각 서비스 상의 안내, 공지사항, 아르콘 카르타 웹고객센터(이하 ‘고객센터’) 도움말 등에서 쉽게 확인하실 수 있습니다.
+         아르콘 카르타는 기본적으로 여러분 모두에게 동일한 내용의 서비스를 제공합니다. 다만, '청소년보호법' 등 관련 법령이나 기타 개별 서비스 제공에서의 특별한 필요에 의해서 연령 또는 일정한 등급을 기준으로 이용자를 구분하여 제공하는 서비스의 내용, 이용 시간, 이용 횟수 등을 다르게 하는 등 일부 이용을 제한하는 경우가 있습니다. 자세한 내용은 역시 각 서비스 상의 안내, 공지사항, 고객센터 도움말 등에서 확인하실 수 있습니다.
+             </textarea>
+            </div>
+            <div class="u-form-group u-form-message u-form-group-9">
+              <label for="message-30ce" class="u-form-control-hidden u-label"></label>
+              <textarea placeholder="약관2" style="resize:none" rows="4" cols="50" id="message-30ce" name="message-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="" readonly="True">
+            아르콘 카르타 서비스 이용약관2
+            아르콘 카르타는 단체에 속한 여러 구성원들이 공동의 계정으로 아르콘 카르타 서비스를 함께 이용할 수 있도록 단체회원 계정도 부여하고 있습니다. 단체회원 구성원들은 하나의 계정 및 아이디(ID)를 공유하되 각자 개별적으로 설정한 비밀번호를 입력하여 계정에 로그인하고 각종 서비스를 이용하게 됩니다. 단체회원은 관리자와 멤버로 구성되며, 관리자는 구성원 전부로부터 권한을 위임 받아 단체회원을 대표하고 단체회원 계정을 운용합니다.
+            따라서 관리자는 단체회원 계정을 통해 별도 약관 또는 기존 약관 개정에 대해 동의하거나 단체회원에서 탈퇴할 수 있고, 멤버들의 단체회원 계정 로그인 방법 및 이를 통한 게시물 게재 등 아르콘 카르타 서비스 이용을 관리(게시물 삭제 포함)할 수 있습니다. 본 약관에서 규정한 사항은 원칙적으로 구성원 모두에게 적용되며, 각각의 구성원은 다른 구성원들의 단체회원 계정 및 아이디(ID)를 통한 서비스 이용에 관해 연대책임을 부담합니다.
+            단체회원 계정 사용에서의 관리자, 멤버 등의 권한 및 (공동)책임에 관한 사항 등은 계정 운영정책 및 고객센터 내 아르콘 카르타 단체회원(단체 아이디) 소개 등에서 확인해 주시기 바랍니다.
+            여러분이 제공한 콘텐츠를 소중히 다룰 것입니다.
+            아르콘 카르타는 여러분이 게재한 게시물이 아르콘 카르타 서비스를 통해 다른 이용자들에게 전달되어 우리 모두의 삶을 더욱 풍요롭게 해줄 것을 기대합니다. 게시물은 여러분이 타인 또는 자신이 보게 할 목적으로 아르콘 카르타 서비스 상에 게재한 부호, 문자, 음성, 음향, 그림, 사진, 동영상, 링크 등으로 구성된 각종 콘텐츠 자체 또는 파일을 말합니다.
+           </textarea>
+
+            <div class="u-form-agree u-form-group u-form-group-10">
+              <input type="checkbox" id="agree-0b62" name="agree" class="u-agree-checkbox" required="">
+              <label for="agree-0b62" class="u-label">이용약관에 동의합니다</label>
+            </div>
+            <div class="">
+              
+              <button type="button" id = "signup">가입하기</button> 
+            </div>
+            <div class="u-form-send-message u-form-send-success" > 가입이 완료되었습니다! </div>
+            <div class="u-form-send-error u-form-send-message" > 실패 </div>
+            <input type="hidden" value="" name="recaptchaResponse">
+          </form>
+       </div>
+        <a href="javascript:history.back();" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2" >뒤로가기</a>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-95b9"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      
+      <p class="u-text">
+        <span>site created by LKM, LYB, CYG, KHJ, MGS, CEJ</span>
+      </p>
+    </section>
+  </body>
+</html>

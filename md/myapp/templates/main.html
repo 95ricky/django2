@@ -1,0 +1,274 @@
+{% load cards_tags %}
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="#하이루">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <link rel="stylesheet" href="/static/css/our.css/main.css" media="screen">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link rel="stylesheet" href="/static/css/style.css/style.css">
+    <link rel="stylesheet" href="/static/css/nice.css/default.css" media="screen">
+   <link rel="stylesheet" href="/static/css/main.css/main.css" media="screen">
+   <title>main</title>
+    <script type="text/javascript" src="/static/js/Ourjs/main.js/main.js"></script> 
+    <script class="u-script" type="text/javascript" src="/static/js/main.js/main.js" ></script>
+    <script class="u-script" type="text/javascript" src="/static/js/main.js/mainnicepage.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="generator" content="Nicepage 3.18.2, nicepage.com">
+    
+   <script>
+        $(function(){
+         $('#carousel-example-generic').carousel({
+         interval: 1000,
+         pause: "hover",
+         wrap: true,
+         keyboard : true
+         });
+      });
+        
+</script>
+<script type="text/javascipt">
+    var x = [[$x]]
+    if(x == check){
+       $('#check').attr('selected','selected');
+       
+    }else if(x == credit){
+       $('#credit').attr('selected','selected');
+       
+    }
+</script>
+    
+    
+    <script type="application/ld+json">{
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "",
+      "logo": "images/default-logo.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+  </head>
+
+  <body class="u-body">
+  <header class="u-clearfix u-header u-header" id="sec-f43b">
+     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a href="/" class="u-image u-logo u-image-1">
+           <img src="/static/images/acorncarta.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
+            <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+            </symbol>
+            </defs></svg>
+           </a>
+          </div>
+          {% if user.is_authenticated %}                             
+      <div class="u-nav-container">
+         <ul class="u-nav u-unstyled u-nav-1">
+            <li class="u-nav-item">
+               <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/" style="padding: 10px 20px;">홈</a>            
+            </li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/mypage?uname={{ user.username }}" style="padding: 10px 20px;">마이페이지</a>
+            </li>
+            <li class="u-nav-item"><a class="account-dropdown__item" href="/logout" style="padding: 10px 20px;">로그아웃</a>
+               <span>{{ user.username }}님 환영합니다!<i class="ion-arrow-down-b"></i></span>
+            </li></ul>
+      </div>    
+       {% else %}
+      <div class="u-nav-container">
+         <ul class="u-nav u-unstyled u-nav-1">
+            <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/" style="padding: 10px 20px;">홈</a>
+            </li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/login" style="padding: 10px 20px;">로그인</a>
+            </li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/signup" style="padding: 10px 20px;">회원가입</a>
+            </li>
+         </ul>
+      </div> 
+        {% endif %}         
+          
+        </nav>
+      </div>
+   </header>
+<section class="u-clearfix u-section-1" id="sec-41a1">
+   <div class="u-clearfix u-sheet u-sheet-1">
+      <h2 class="u-text u-text-default u-text-1">
+         <span style="font-size: 1.5rem;">
+            <form action="/search/" name="frm" style="height:50px;" onsubmit='return false'>
+                  <input type="text" name="tag" style="width:200px; height:50px;">
+                  <input type="submit" class="u-border-2 u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-2" value="검색" onclick="check2()">
+               </form>
+            </span>
+        </h2>
+        <div style="width:183px; height:300px; float:right; margin:80px 0px 0px 0px;">
+         <div id="carousel-example-generic" class="carousel slide">
+               <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>      
+               </ol>
+               <div class="carousel-inner" role="listbox">
+                 <div class="item active">
+                <img src="/static/images/card3.png">
+                <div class="carousel-caption" style="color:black;"></div>
+           </div>
+         <div class="item">
+               <img src="/static/images/card1.jpg">
+                <div class="carousel-caption" style="color:black;"></div>
+           </div>
+           <div class="item">
+                 <img src="/static/images/card2.jpg">
+                <div class="carousel-caption" style="color:black;"></div>
+           </div>
+           <div class="item">
+             <img src="/static/images/card4.png">
+             <div class="carousel-caption" style="color:black;">
+             </div>
+           </div>
+         </div>
+         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+         </a>
+         <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+           <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+         </a>
+        </div>
+        </div>   
+        
+        <br><br><br><br>
+        {% if card_data %}
+        {% for f in card_data %}
+        <form action="/searchlist/?tag={{cardtag}}&CardKind={{f.card_type}}&CardCo={{f.card_co}}" style="width:200px;">
+        {% endfor %}
+        {% endif %}
+        
+         <table border=1 style="width:130px;"class="table table-hover shadow-lg p-3 mb-5 bg-body rounded design">
+            <tr>
+            <td>
+            
+            <span style="font-size: 1rem;">
+            <input type="hidden" name="tag" value="{{cardtag}}">
+            <select name="CardKind" id="CardKind" class="form-select form-select-sm" aria-label=".form-select-sm example">
+               <option value="all">전체</option>
+               <option value="check" id="check">체크카드</option>
+               <option value="credit" id="credit">신용카드</option>
+            </select>
+         </span>
+         
+           </td>
+           </tr>
+           <tr>
+           
+           </tr>
+           <tr>
+           <td>
+           
+            <span style="font-size: 1rem;">
+               <select name="CardCo" class="form-select form-select-sm" aria-label=".form-select-sm example">
+               <option value="all">전체</option>
+               <option value="우리" id="WR">우리카드</option>
+               <option value="국민" id="KM">국민카드</option>
+               <option value="신한" id="SH">신한카드</option>
+               <option value="삼성" id="SS">삼성카드</option>
+               <option value="현대" id="HD">현대카드</option>
+               <option value="농협">농협카드</option>
+            </select>
+            </span>
+            
+          </td>
+          </tr>
+          <tr>
+          <td>
+        <input type="submit" value="적용" class="btn btn-secondary" style="width:120px; text-align: center;">
+          </td>
+          </tr>
+        </table>
+        </form>
+        <div class="u-container-style u-group u-white u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+             <div id = 'cardshow'>
+                <table border=0  width="100%" height="100%" class="table table-hover shadow-lg p-3 mb-5 bg-body rounded">
+                
+                {% if card_data %}
+                {% for CD in card_data %}
+                
+                <tr>
+                   <td style="width:20%; height:33%;">
+                      <a href="/cardshow?idx={{CD.card_index}}" class="visit"><img class='imgsize' src= "/{{CD.card_img}}"></a>
+                      <!-- src= "{{CD.card_img}}" -->
+                   </td>
+                   <td class='infoo'>
+                      <a href="/cardshow?idx={{CD.card_index}}" class="visit">{{CD.card_co}} 카드</a>
+               </td>
+               <td class='infoo'><!-- /board/content?id={{d.id}}&page={{data.number}} -->
+                  <a href="/cardshow?idx={{CD.card_index}}" class="visit"><h5>{{CD.card_name}} 카드</h5></a>
+               </td>
+            {% if CD.card_type == 'credit' %} <!-- 신용카드일 경우 -->
+               <td class='infoo' >   
+                  <a href="/cardshow?idx={{CD.card_index}}" class="visit">신용카드</a>
+                   </td>
+                {% else %} <!--  신용카드가 아닐경우(체크카드일경우) -->
+                   <td class='infoo'>   
+                  <a href="/cardshow?idx={{CD.card_index}}" class="visit">체크카드</a>
+                   </td>
+                {% endif %}
+                   <td style="text-align : center;">
+                      <a href="/compare?code={{CD.card_code}}">비교하기</a>
+                   </td>
+                </tr>
+            {% endfor %}
+            <tr>
+               <td colspan="6" style="text-align:center;">
+               {% if card_data.has_previous %} 
+               <!-- <a href="?{% param_replace page=1 %}">&laquo;이전</a> -->                 
+               <a href="?{% param_replace page=card_data.previous_page_number %}">&laquo;이전</a>
+               {% endif %}
+               {% if card_data.has_next %}
+               <a href="?{% param_replace page=card_data.next_page_number %}">다음&raquo;</a>
+               <!--  <a href="?{% param_replace page=card_data.paginator.num_pages %}">다음&raquo;</a>-->
+               {% endif %}
+               (페이지 {{card_data.number}} / {{card_data.paginator.num_pages}})
+               </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4" style="text-align: center;"><h5>해당 '카드' 가 없습니다.</h5></td>
+            </tr>
+            {% endif %}
+                </table>
+             </div>
+          </div>
+        </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-2bb5"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">
+           전화 : 02-539-8879<br>
+           서울특별시 강남구 테헤란로 124 삼원타워 5층<br>
+           장고는 못말려
+        </p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      
+      <p class="u-text">
+        <span>site created by LKM, LYB, CYG, KHJ, MGS, CEJ</span>
+      </p>
+    </section>
+  </body>
+</html>

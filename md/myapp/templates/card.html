@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>card</title>
+    <link rel="stylesheet" href="/static/css/nice.css/default.css" media="screen">
+    <link rel="stylesheet" href="/static/css/card.css/card.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/static/js/card.js/card.js" defer=""></script>
+    <script type="text/javascript" src="/static/js/Ourjs/card.js/card.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/static/js/card.js/cardnicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.18.2, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <script type="application/ld+json">{
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "",
+      "logo": "images/default-logo.png"
+}</script>
+
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Page 1">
+    <meta property="og:type" content="website">
+  </head>
+     
+  <body class="u-body">
+     <header class="u-clearfix u-header u-header" id="sec-32f8">
+        <div class="u-clearfix u-sheet u-sheet-1">
+        <a href="/" class="u-image u-logo u-image-1">
+          <img src="/static/images/acorncarta.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect></symbol></defs></svg>
+            </a>
+          </div>
+          {% if user.is_authenticated %}
+                                          
+             <div class="u-nav-container">
+               <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item">
+               <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/" style="padding: 10px 20px;">홈</a></li>
+               <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/mypage?uname={{ user.username }}" style="padding: 10px 20px;">마이페이지</a></li>
+               <li class="u-nav-item"><a class="account-dropdown__item" href="/logout" style="padding: 10px 20px;">로그아웃</a>
+               <span>{{ user.username }}님 환영합니다!<i class="ion-arrow-down-b"></i></span>
+            </li></ul>
+             </div>  
+          {% else %}
+             
+             <div class="u-nav-container">
+                <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item">
+                  <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/" style="padding: 10px 20px;">홈</a></li>
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="login" style="padding: 10px 20px;">로그인</a></li>
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="signup" style="padding: 10px 20px;">회원가입</a></li>
+               </ul>
+          </div> 
+          {% endif %}         
+        </nav>
+      </div></header>
+      
+    <section class="u-align-center u-clearfix u-section-1" id="sec-35b2">
+       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+          <div id="carousel-bd35" data-interval="5000" data-u-ride="carousel" class="u-carousel u-slider u-slider-1">
+             <ol class="u-absolute-hcenter u-carousel-indicators u-hidden u-carousel-indicators-1">
+               <li data-u-target="#carousel-bd35" class="u-active u-grey-30" data-u-slide-to="0"></li>
+                </ol>
+                <div class="u-carousel-inner" role="listbox">
+                   <div class="u-active u-align-left u-carousel-item u-container-style u-slide">
+                      <div class="u-container-layout u-container-layout-1">
+                         {% if card_data2 %}
+                            {% for CD2 in card_data2 %}
+                               <img alt="" class="u-image u-image-default u-image-1" data-image-width="1280" data-image-height="716" src="/{{CD2.card_img}}">
+                               <!-- {{CD2.card_index}}  ok -->
+                               {% if user.is_authenticated %}
+                              <!--  {{CD2.card_index}} ok -->
+                               <a name="heart1" href="javascript:oklogin('{{CD2.card_code}}','{{CD2.card_index}}', '{{user.username}}')" class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-2-base u-border-palette-1-base u-btn u-button-style u-hover-none u-none u-text-hover-palette-2-base u-text-palette-1-base u-btn-1"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" style="width: 1em; height: 1em;"><path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268 c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514 c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482 s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514 C512,93.417,453.532,30,376,30z"></path></svg><img></span>
+                               </a>
+                               {% else %}
+                               <a href="javascript:nologin()" class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-2-base u-border-palette-1-base u-btn u-button-style u-hover-none u-none u-text-hover-palette-2-base u-text-palette-1-base u-btn-1"><span class="u-icon u-icon-1"><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" style="width: 1em; height: 1em;"><path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268 c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514 c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482 s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514 C512,93.417,453.532,30,376,30z"></path></svg><img></span>
+                               </a>
+                               {% endif %}
+                               <div style = "bottom:30px; left:100px"><p class="u-text-1" style=""><h2>{{CD2.card_name}}카드&#128179;</h2></div> 
+                               <div style="margin-left:60px; bottom: 30px;"><h5># {{CD2.card_tag}}</h5></div>
+                               <ul class="u-custom-list u-text u-text-3" style="bottom: 30px">
+                               <li>
+                                  <div class="u-list-icon">
+                                     <svg class="u-svg-content" viewBox="0 0 24 24" id="svg-a132"><path d="m23.526 5.101c-.04-.399-.231-.759-.541-1.014l-2.318-1.904c-.639-.524-1.585-.432-2.111.207l-9.745 11.86-3.916-3.355c-.628-.536-1.576-.465-2.115.163l-1.952 2.278c-.261.304-.388.691-.357 1.091s.215.764.52 1.024l7.403 6.346c.275.235.616.361.974.361.044 0 .089-.002.134-.006.405-.036.77-.229 1.028-.542l12.662-15.411c.255-.309.373-.7.334-1.098z" fill="#2196f3"></path><path d="m.638 13.173c-.304.354-.452.807-.417 1.273.036.466.251.891.606 1.194l7.403 6.346v.001c.321.273.719.421 1.136.421.052 0 .104-.003.156-.007.472-.042.898-.266 1.199-.632l12.665-15.411c.613-.746.504-1.852-.242-2.464l-2.318-1.904c-.744-.612-1.848-.504-2.463.24l-9.584 11.665-3.722-3.189c-.732-.627-1.839-.543-2.467.189zm3.444-1.329 4.303 3.688c.153.131.348.196.554.178.201-.018.386-.115.514-.271l10.07-12.255c.087-.107.246-.123.352-.035l2.318 1.904c.107.088.123.246.035.353l-12.664 15.41c-.058.07-.132.087-.171.09-.039.006-.115.001-.185-.059l-7.404-6.346c-.068-.059-.083-.132-.086-.171-.003-.038.001-.113.06-.182l1.952-2.278c.089-.102.247-.116.352-.026z"></path></svg>
+                              </div><div>{{CD2.card_benefit1}}&#128035;</div>
+                               </li>
+                               <li>
+                                  <div class="u-list-icon">
+                                     <svg class="u-svg-content" viewBox="0 0 24 24" id="svg-a132"><path d="m23.526 5.101c-.04-.399-.231-.759-.541-1.014l-2.318-1.904c-.639-.524-1.585-.432-2.111.207l-9.745 11.86-3.916-3.355c-.628-.536-1.576-.465-2.115.163l-1.952 2.278c-.261.304-.388.691-.357 1.091s.215.764.52 1.024l7.403 6.346c.275.235.616.361.974.361.044 0 .089-.002.134-.006.405-.036.77-.229 1.028-.542l12.662-15.411c.255-.309.373-.7.334-1.098z" fill="#2196f3"></path><path d="m.638 13.173c-.304.354-.452.807-.417 1.273.036.466.251.891.606 1.194l7.403 6.346v.001c.321.273.719.421 1.136.421.052 0 .104-.003.156-.007.472-.042.898-.266 1.199-.632l12.665-15.411c.613-.746.504-1.852-.242-2.464l-2.318-1.904c-.744-.612-1.848-.504-2.463.24l-9.584 11.665-3.722-3.189c-.732-.627-1.839-.543-2.467.189zm3.444-1.329 4.303 3.688c.153.131.348.196.554.178.201-.018.386-.115.514-.271l10.07-12.255c.087-.107.246-.123.352-.035l2.318 1.904c.107.088.123.246.035.353l-12.664 15.41c-.058.07-.132.087-.171.09-.039.006-.115.001-.185-.059l-7.404-6.346c-.068-.059-.083-.132-.086-.171-.003-.038.001-.113.06-.182l1.952-2.278c.089-.102.247-.116.352-.026z"></path></svg>
+                                   </div><div>{{CD2.card_benefit2}}&#128036;</div>
+                               </li>
+                               <li>
+                                  <div class="u-list-icon">
+                                     <svg class="u-svg-content" viewBox="0 0 24 24" id="svg-a132"><path d="m23.526 5.101c-.04-.399-.231-.759-.541-1.014l-2.318-1.904c-.639-.524-1.585-.432-2.111.207l-9.745 11.86-3.916-3.355c-.628-.536-1.576-.465-2.115.163l-1.952 2.278c-.261.304-.388.691-.357 1.091s.215.764.52 1.024l7.403 6.346c.275.235.616.361.974.361.044 0 .089-.002.134-.006.405-.036.77-.229 1.028-.542l12.662-15.411c.255-.309.373-.7.334-1.098z" fill="#2196f3"></path><path d="m.638 13.173c-.304.354-.452.807-.417 1.273.036.466.251.891.606 1.194l7.403 6.346v.001c.321.273.719.421 1.136.421.052 0 .104-.003.156-.007.472-.042.898-.266 1.199-.632l12.665-15.411c.613-.746.504-1.852-.242-2.464l-2.318-1.904c-.744-.612-1.848-.504-2.463.24l-9.584 11.665-3.722-3.189c-.732-.627-1.839-.543-2.467.189zm3.444-1.329 4.303 3.688c.153.131.348.196.554.178.201-.018.386-.115.514-.271l10.07-12.255c.087-.107.246-.123.352-.035l2.318 1.904c.107.088.123.246.035.353l-12.664 15.41c-.058.07-.132.087-.171.09-.039.006-.115.001-.185-.059l-7.404-6.346c-.068-.059-.083-.132-.086-.171-.003-.038.001-.113.06-.182l1.952-2.278c.089-.102.247-.116.352-.026z"></path></svg>
+                                   </div><div>{{CD2.card_benefit3}}&#128037;</div>
+                               </li>
+                               </ul>
+                            {% endfor %}
+                         {% endif %}
+                            <div class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-1" style="bottom: 30px">
+                               <div class="u-repeater u-repeater-1">
+                                  {% if board_data.count >= 3 %}
+                                     {% for BD in board_data %}
+                                        {% if forloop.counter < 5 %}
+                                           <div class="u-align-left u-border-2 u-border-grey-25 u-container-style u-list-item u-repeater-item u-white u-list-item-1">
+                                                 <div class="u-container-layout u-similar-container u-container-layout-2">
+                                                   <h4 class="u-text u-text-4"> {{BD.board_title}} </h4>
+                                                   <p class="u-text u-text-5"> {{BD.board_write}} </p>
+                                                 </div>
+                                            </div>
+                                        {% endif %}
+                                     {% endfor %}
+                                  {% else %}
+                                     {% for BD in board_data %}
+                                        {% if forloop.counter < 5 %}
+                                           <div class="u-align-left u-border-2 u-border-grey-25 u-container-style u-list-item u-repeater-item u-white u-list-item-1">
+                                                 <div class="u-container-layout u-similar-container u-container-layout-2">
+                                                   <h4 class="u-text u-text-4"> {{BD.board_title}} </h4>
+                                                   <p class="u-text u-text-5"> {{BD.board_write}} </p>
+                                                 </div>
+                                            </div>
+                                        {% endif %}
+                                     {% endfor %}
+                                  <div class="u-align-left u-border-2 u-border-grey-25 u-container-style u-list-item u-repeater-item u-video-cover u-white">
+                                        <div class="u-container-layout u-similar-container u-container-layout-3">
+                                          <h4 class="u-text u-text-6">후기가 없어요!</h4>
+                                          <p class="u-text u-text-7">지금 당장 후기를 등록해주세요!</p>
+                                        </div>
+                                   </div>
+                                   <div class="u-align-left u-border-2 u-border-grey-25 u-container-style u-list-item u-repeater-item u-video-cover u-white">
+                                        <div class="u-container-layout u-similar-container u-container-layout-3">
+                                          <h4 class="u-text u-text-6">후기가 없어요!</h4>
+                                          <p class="u-text u-text-7">지금 당장 후기를 등록해주세요!</p>
+                                        </div>
+                                   </div>
+                                  {% endif %}
+                               </div>
+                            {% if board_data.count >= 5 %}
+                               {% if index %}
+                                  <a href="/more?idx={{index}}" class="visit">후기 더보기</a>
+                               {% endif %}
+                            {% else %}
+                               <br>
+                            {% endif %}
+                               <form action="writesignup" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 15px;" source="custom" name="form">{% csrf_token %}
+                                  <div class="u-form-email u-form-group u-form-group-1">
+                                     {% if index %}
+                                        <input type="text" for="title1" placeholder="제목" id="writetitle" name="title" class="u-border-4 u-border-grey-30 u-input u-input-rectangle" >
+                                           <div id="title_cnt">(0 / 15)</div>
+                              </div>
+                              <div class="u-form-group u-form-message u-form-group-2">
+                                 <textarea placeholder="후기" rows="4" cols="30" id="writemessage" name="comment" class="u-border-4 u-border-grey-30 u-input u-input-rectangle" style="resize:none"></textarea>
+                                       <div id="test_cnt">(0 / 50)</div>
+                                 </div>
+                                 <div class="u-form-email u-form-group u-form-group-1">
+                                    <input type="hidden" value={{index}} name="signok">
+                                 </div>
+                                 <div class="u-align-center u-form-group u-form-submit u-form-group-3">
+                                    {% if user.is_authenticated %}
+                                       <a href="javascript:writesignup();" class="u-btn u-btn-submit u-button-style"  role="button" id="writesignup" style="bottom:30px">등록</a>
+                                 {% else %}
+                                    <a href="javascript:nowritesignup();" class="u-btn u-btn-submit u-button-style"  role="button" id="nowritesignup">등록</a>  
+                                 {% endif %}
+                                 {% endif %}
+                              </div>
+                               </form>
+                               <a href="/" class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-hover-palette-2-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-3">메인으로 돌아가기</a>
+                            </div>
+                      </div>
+                   </div>
+                </div>
+                <a class="u-carousel-control u-carousel-control-prev u-grey-60 u-icon-circle u-spacing-9 u-carousel-control-1" href="javascript:prev();" role="button" data-u-slide="prev">
+                  <span aria-hidden="true">
+                       <svg viewBox="0 0 477.175 477.175"><path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+                       c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path></svg>
+                  </span>
+                  <span class="sr-only">+Previous</span>
+                </a>
+               <a class="u-carousel-control u-carousel-control-next u-grey-60 u-icon-circle u-spacing-9 u-carousel-control-2" href="javascript:next();" role="button" data-u-slide="next">
+                  <span aria-hidden="true">
+                    <svg viewBox="0 0 477.175 477.175"><path d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
+                    c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z"></path></svg>
+                  </span>
+                  <span class="sr-only">+Next</span>
+                </a>
+          </div>
+          <a href="/" class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-hover-palette-2-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-3">메인으로 돌아가기</a>
+       </div>
+      </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-2bb5"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">
+           전화 : 02-539-8879<br>
+           서울특별시 강남구 테헤란로 124 삼원타워 5층<br>
+           장고는 못말려
+        </p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      
+      <p class="u-text">
+        <span>site created by LKM, LYB, CYG, KHJ, MGS, CEJ</span>
+      </p>
+    </section>
+  </body>
+</html>

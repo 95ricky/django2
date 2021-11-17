@@ -1,0 +1,132 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 604px;
+}
+
+.u-section-1 .u-text-1 {
+  margin: 49px auto 0;
+}
+
+.u-section-1 .u-text-2 {
+  font-size: 2.25rem;
+  margin: 101px 822px 0 197px;
+}
+
+.u-section-1 .u-text-3 {
+  font-size: 2.25rem;
+  margin: 0 835px 0 197px;
+}
+
+.u-section-1 .u-form-1 {
+  height: 251px;
+  margin: -178px 237px 0 318px;
+}
+
+.u-section-1 .u-form-group-1 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-btn-1 {
+  font-size: 1.5rem;
+}
+
+.u-section-1 .u-btn-2 {
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: -68px auto 0 477px;
+  padding: 9px 30px 10px 28px;
+}
+
+.u-section-1 .u-text-4 {
+  font-size: 2.25rem;
+  margin: -233px 835px 60px 197px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-text-2 {
+    margin-right: 722px;
+    margin-left: 76px;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-right: 735px;
+    margin-left: 97px;
+  }
+
+  .u-section-1 .u-form-1 {
+    margin-right: 137px;
+    margin-left: 218px;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-left: 277px;
+  }
+
+  .u-section-1 .u-text-4 {
+    margin-right: 735px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-text-2 {
+    margin-right: 599px;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-right: 612px;
+    margin-left: 0;
+  }
+
+  .u-section-1 .u-form-1 {
+    margin-right: 27px;
+    margin-left: 108px;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-left: 57px;
+  }
+
+  .u-section-1 .u-text-4 {
+    margin-right: 612px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-text-2 {
+    margin-right: 419px;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-right: 432px;
+  }
+
+  .u-section-1 .u-form-1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-left: 0;
+  }
+
+  .u-section-1 .u-text-4 {
+    margin-right: 432px;
+    margin-left: 148px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-text-2 {
+    margin-right: 219px;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-right: 232px;
+  }
+
+  .u-section-1 .u-text-4 {
+    margin-right: 232px;
+    margin-left: 93px;
+  }
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="카드 혜택 비교">
+<meta name="description" content="">
+<meta name="page_type" content="np-template-header-footer-from-plugin">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+
+<title>카드비교</title>
+<link rel="stylesheet" href="static/css/nice.css/default.css" media="screen">
+<link rel="stylesheet" href="static/css/cardcompare.css/cardcompare.css" media="screen">
+<script class="u-script" type="text/javascript" src="static/js/cardcompare.js/cardcompare.js" defer="">
+</script>
+<script class="u-script" type="text/javascript" src="static/js/cardcompare.js/cardcomparenicepage.js" defer="">
+</script>
+<meta name="generator" content="Nicepage 3.18.2, nicepage.com">
+<link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+
+<script type="text/javascript">
+    window.onload = function(){
+       document.getElementById("svg-b749").onclick = left_image
+       document.getElementById("svg-8863").onclick = right_image
+    }
+   function left_image(){
+   //alert("a");
+   window.open("/compare/choice", "카드찾기", "toolbar=no,width=600,height=500,top=200,left=400")
+   }
+   function right_image(){
+   window.open("/compare/choice2", "카드찾기", "toolbar=no,width=600,height=500,top=200,left=400")
+   }
+   </script>
+<script src="/static/js/Ourjs/cardcompare.js/cardcompare.js"></script>
+
+<script type="application/ld+json">{
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "",
+      "logo": "images/default-logo.png"
+}</script>
+<meta name="theme-color" content="#478ac9">
+<meta property="og:title" content="Home">
+<meta property="og:type" content="website">
+</head>
+
+<body class="u-body">
+   <header class="u-clearfix u-header u-header" id="sec-32f8">
+      <div class="u-clearfix u-sheet u-sheet-1">
+         <a href="/" class="u-image u-logo u-image-1"> 
+         <img src="/static/images/acorncarta.png" class="u-logo-image u-logo-image-1">
+         </a>
+         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+            <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+               <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#"> 
+                  <svg>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+                  </svg> 
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <defs>
+                     <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
+                        <rect y="1" width="16" height="2"></rect>
+                        <rect y="7" width="16" height="2"></rect>
+                        <rect y="13" width="16" height="2"></rect>
+                     </symbol>
+                     </defs>
+                  </svg>
+               </a>
+            </div>
+            {% if user.is_authenticated %}
+
+            <div class="u-nav-container">
+               <ul class="u-nav u-unstyled u-nav-1">
+                  <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/" style="padding: 10px 20px;">홈</a></li>
+                  <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/mypage?uname={{ user.username }}" style="padding: 10px 20px;">마이페이지</a></li>
+                  <li class="u-nav-item"><a class="account-dropdown__item" href="/logout" style="padding: 10px 20px;">로그아웃</a> 
+                  <span>{{user.username }}님 환영합니다!<i class="ion-arrow-down-b"></i>
+                  </span></li>
+               </ul>
+            </div>
+
+
+            {% else %}
+
+            <div class="u-nav-container">
+               <ul class="u-nav u-unstyled u-nav-1">
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/" style="padding: 10px 20px;">홈</a></li>
+                  <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="login" style="padding: 10px 20px;">로그인</a></li>
+                  <li class="u-nav-item">
+                  <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="signup" style="padding: 10px 20px;">회원가입</a></li>
+               </ul>
+            </div>
+            {% endif %}
+         </nav>
+      </div>
+   </header>
+   <section class="u-align-center u-clearfix u-section-1" id="sec-3a7c">
+      <div class="u-clearfix u-sheet u-sheet-1">
+         <h1 class="u-text u-text-1">카드 혜택 비교</h1>
+      </div>
+   </section>
+   <section class="u-clearfix u-section-2" id="sec-b3f5">
+      <div class="u-clearfix u-sheet u-sheet-1">
+
+         <div class="u-border-0 u-border-palette-1-base u-container-style u-group u-image u-image-1 " id="card-select2" data-image-width="400" data-image-height="265">
+            <div class="u-container-layout u-container-layout-1" style="background-color: #EFEFEA;"></div>
+         </div>
+         
+         <p class="u-text u-text-default u-text-1">
+            <br>
+         </p>
+         <p class="u-text u-text-default u-text-2">
+            <br>
+         </p>
+         
+         <div class="u-shape u-shape-svg u-text-palette-1-base u-shape-1">
+            <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style="">
+               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b749"></use>
+            </svg>
+            <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-b749" cursor="pointer">
+               <path d="M80,0C35.9,0,0,35.9,0,80s35.9,80,80,80s80-35.9,80-80S124.1,0,80,0z M118.5,86.2H86.2V120c0,3.4-2.8,6.2-6.2,6.2 s-6.2-2.8-6.2-6.2V86.2H41.5c-3.4,0-6.2-2.8-6.2-6.2s2.8-6.2,6.2-6.2h32.3V43.1c0-3.4,2.8-6.2,6.2-6.2s6.2,2.8,6.2,6.2v30.8h32.3 c3.4,0,6.2,2.8,6.2,6.2S121.9,86.2,118.5,86.2z">
+               </path>
+            </svg>
+         </div>
+         {% if cresult %} 
+         {% for c in cresult %}
+         <div class="u-border-0 u-border-palette-5-base u-container-style u-group u-image u-image-2" id="card-select1" data-image-width="400" data-image-height="265">
+            <div class="u-container-layout u-container-layout-2">
+               <img src="{{c.card_img}}">
+            </div>
+         {% endfor %} 
+         {% else %} 
+         {% endif %}
+         </div>
+         <div class="u-shape u-shape-svg u-text-palette-1-base u-shape-2 ">
+            <!-- div폼까지 없애면 다른곳 위치가 뒤틀어짐 -->
+         </div>
+         <div class="u-shape u-shape-svg u-text-palette-1-base u-shape-3 ">
+            <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style="">
+               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-8863"></use>
+            </svg>
+            <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-8863" cursor="pointer">
+               <path d="M80,0C35.9,0,0,35.9,0,80s35.9,80,80,80s80-35.9,80-80S124.1,0,80,0z M118.5,86.2H86.2V120c0,3.4-2.8,6.2-6.2,6.2 s-6.2-2.8-6.2-6.2V86.2H41.5c-3.4,0-6.2-2.8-6.2-6.2s2.8-6.2,6.2-6.2h32.3V43.1c0-3.4,2.8-6.2,6.2-6.2s6.2,2.8,6.2,6.2v30.8h32.3 c3.4,0,6.2,2.8,6.2,6.2S121.9,86.2,118.5,86.2z">
+               </path>
+            </svg>
+         </div>
+         <div class="u-shape u-shape-svg u-text-palette-1-base u-shape-4 ">
+            <!-- div 다른곳과마찬가지 -->
+         </div>
+         <p class="u-text u-text-default u-text-3">유형</p>
+         <p class="u-text u-text-default u-text-4">태그</p>
+         <p class="u-text u-text-default u-text-5">연회비</p>
+         <p class="u-text u-text-default u-text-6">전월 실적</p>
+         <p class="u-text u-text-default u-text-7">주요 혜택</p>
+         <p class="u-text u-text-default u-text-8">상세 혜택</p>
+         <form action="/compare/" method="post" name="showForm1">
+            {% csrf_token %}
+            <div class="u-table u-table-responsive u-table-1">
+               <table
+                  class="u-table-entity shadow-lg p-3 mb-5 bg-body table table-hover shadow-lg p-3 mb-5 bg-body rounded"
+                  style="text-align: center;">
+                  <colgroup>
+                     <col width="100%">
+                  </colgroup>
+                  <tbody class="u-table-alt-palette-1-light-3 u-table-body">
+                     {% if cresult %} 
+                     {% for c in cresult %}
+                     <tr style="height: 27px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="1-4">{{c.card_name}}</td>
+                     </tr>
+                     <tr style="height: 40px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="1-5">{{c.card_type}}</td>
+                     </tr>
+                     <tr style="height: 47px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="1-6">{{c.card_tag}}</td>
+                     </tr>
+                     <tr style="height: 45px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="1-7">{{c.card_af}}원</td>
+                     </tr>
+                     <tr style="height: 47px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="1-8">{{c.card_pm}}원</td>
+                     </tr>
+                     <tr style="height: 29px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="1-9">{{c.card_benefit1}},{{c.card_benefit2}},{{c.card_benefit3}}</td>
+                     </tr>
+                     <tr style="height: 130px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="1-10">{{c.card_detail}}</td>
+                     </tr>
+                     {% endfor %} 
+                     {% else %} 
+                     {% endif %}
+                  </tbody>
+               </table>
+            </div>
+         </form>
+         <form action="/compare/" method="post" name="showForm2">
+            {% csrf_token %}
+            <div class="u-table u-table-responsive u-table-2">
+               <table class="table table-hover shadow-lg p-3 mb-5 bg-body rounded" style="text-align: center;">
+                  <colgroup>
+                     <col width="100%">
+                  </colgroup>
+                  <tbody class="u-table-alt-palette-1-light-3 u-table-body">
+                     <tr style="height: 27px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="2-4"></td>
+                     </tr>
+                     <tr style="height: 40px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="2-5"></td>
+                     </tr>
+                     <tr style="height: 47px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="2-6"></td>
+                     </tr>
+                     <tr style="height: 45px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="2-7"></td>
+                     </tr>
+                     <tr style="height: 47px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="2-8"></td>
+                     </tr>
+                     <tr style="height: 29px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="2-9"></td>
+                     </tr>
+                     <tr style="height: 130px;">
+                        <td class="u-border-2 u-border-grey-75 u-table-cell" id="2-10"></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </form>
+
+         <a href="/" class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-hover-palette-2-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-1">메인으로 돌아가기</a>
+      </div>
+   </section>
+   <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-2bb5"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">
+           전화 : 02-539-8879<br>
+           서울특별시 강남구 테헤란로 124 삼원타워 5층<br>
+           장고는 못말려
+        </p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      
+      <p class="u-text">
+        <span>site created by LKM, LYB, CYG, KHJ, MGS, CEJ</span>
+      </p>
+    </section>
+</body>
+</html>

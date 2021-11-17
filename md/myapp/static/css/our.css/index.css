@@ -1,0 +1,43 @@
+.coogle {
+   text-align : center;
+   margin-top : 150px;
+   font-size : 90px;   
+   font-family: auto;
+   font-weight: bold;
+}
+
+.coogle span:nth-child(1){
+   color : #4285f4;
+}
+
+.coogle span:nth-child(2){
+   color : #ea4335;
+}
+
+.coogle span:nth-child(3){
+   color : #fbbc05;
+}
+
+.coogle span:nth-child(4){
+   color : #4285f4;
+}
+
+.coogle span:nth-child(5){
+   color : #34a853;
+}
+
+.coogle span:nth-child(6){
+   color : #ea4335;
+}
+
+.search_form{
+   position: relative;
+    padding-right: 42px;
+    background: #fff;
+    border-bottom: 5px solid #ff6e61;
+    border-left : 0px;
+    border-top : 0px;
+    border-right : 0px;
+    width: 400px;
+    display: inline-block;
+}
