@@ -1,0 +1,19 @@
+
+# DDL
+CREATE DATABASE test_
+
+# DML
+# CONTEXT-DATABASE: test_
+
+test_,sensor_id=0B00246C5A ,to_date=20191127
+test_,sensor_id=0B0024B1FD ,to_date=20191127
+test_,sensor_id=0B0024EBAC ,to_date=20191127
+test_,sensor_id=0B0025013D ,to_date=20191127
+test_,sensor_id=0B0025113C ,to_date=20191127
+test_,sensor_id=0B00251523 ,to_date=20191127
+test_,sensor_id=0B002525FF ,to_date=20191127
+test_,sensor_id=0B00252F69 ,to_date=20191127
+test_,sensor_id=0B00254349 ,to_date=20191127
+test_,sensor_id=0B002543A0 ,to_date=20191127
+test_,sensor_id=0B00255E96 ,to_date=20191127
+test_,sensor_id=1001_1 ,to_date=20191127
